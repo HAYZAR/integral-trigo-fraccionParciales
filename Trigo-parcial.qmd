@@ -18,39 +18,42 @@ execute:
 ---
 
 # Introducción
+
 Bienvenidos a este repaso interactivo sobre **técnicas de integración**. Hoy revisaremos:
 
-- **Sustitución trigonométrica**: Ideal para integrales con expresiones cuadráticas o raíces.
-- **Fracciones parciales**: Útil para integrar funciones racionales.
+-   **Sustitución trigonométrica**: Ideal para integrales con expresiones cuadráticas o raíces.
+-   **Fracciones parciales**: Útil para integrar funciones racionales.
 
 **Objetivo**: Comprender, aplicar y visualizar estas técnicas con ejemplos y ejercicios prácticos.
 
----
+------------------------------------------------------------------------
 
 # Sustitución Trigonométrica
 
 ## Concepto
+
 La sustitución trigonométrica se usa para simplificar integrales que involucran expresiones como $\sqrt{a^2 - x^2}$, $\sqrt{x^2 + a^2}$ o $\sqrt{x^2 - a^2}$. Sustituimos $x$ por una función trigonométrica para eliminar raíces.
 
 ## Sustituciones comunes
-- $x = a \sin \theta$ para $\sqrt{a^2 - x^2}$
-- $x = a \cos \theta$ también para $\sqrt{a^2 - x^2}$
-- $x = a \tan \theta$ para $\sqrt{x^2 + a^2}$
-- $x = a \sec \theta$ para $\sqrt{x^2 - a^2}$
+
+-   $x = a \sin \theta$ para $\sqrt{a^2 - x^2}$
+-   $x = a \cos \theta$ también para $\sqrt{a^2 - x^2}$
+-   $x = a \tan \theta$ para $\sqrt{x^2 + a^2}$
+-   $x = a \sec \theta$ para $\sqrt{x^2 - a^2}$
 
 Estas sustituciones aprovechan identidades trigonométricas para simplificar integrales complicadas.
 
----
+------------------------------------------------------------------------
 
 ## Ejemplo resuelto (Indefinida)
+
 Calcular:
 
 $$
 \int \frac{dx}{\sqrt{9 - x^2}}
 $$
 
-**Solución**:
-Sustituimos $x = 3 \sin \theta$, $dx = 3 \cos \theta \, d\theta$.
+**Solución**: Sustituimos $x = 3 \sin \theta$, $dx = 3 \cos \theta \, d\theta$.
 
 $$
 \int \frac{3 \cos \theta \, d\theta}{\sqrt{9 - 9 \sin^2 \theta}} = \int \frac{3 \cos \theta}{3 \cos \theta} \, d\theta = \int d\theta = \theta + C
@@ -69,49 +72,51 @@ $$
 $$
 
 ## Ejemplo adicional (Definida)
+
 Calcular:
 
 $$
 \int_0^{3} \frac{dx}{\sqrt{9 - x^2}}
 $$
 
-**Solución**:
-Usamos el resultado anterior:
+**Solución**: Usamos el resultado anterior:
 
 $$
 \arcsin \left( \frac{x}{3} \right) \Big|_0^3 = \arcsin(1) - \arcsin(0) = \frac{\pi}{2} - 0 = \frac{\pi}{2}
 $$
 
-![Área bajo la curva](graphycs01.svg){width=60%}
+![Área bajo la curva](graphycs02.svg){width="60%"}
 
-
----
+------------------------------------------------------------------------
 
 # Fracciones Parciales
 
 ## Concepto
+
 El método de fracciones parciales se usa para integrar funciones racionales (cociente de polinomios) descomponiéndolas en sumas de fracciones más simples.
 
 ### Requisitos
-- Grado del numerador < grado del denominador (si no, hacer división larga).
-- Factorizar el denominador.
+
+-   Grado del numerador \< grado del denominador (si no, hacer división larga).
+-   Factorizar el denominador.
 
 ### Tipos de factores
-- Factores lineales simples: $\frac{A}{x - r}$
-- Factores cuadráticos irreducibles: $\frac{Bx + C}{x^2 + px + q}$
-- Factores repetidos: incluir potencias ascendentes
 
----
+-   Factores lineales simples: $\frac{A}{x - r}$
+-   Factores cuadráticos irreducibles: $\frac{Bx + C}{x^2 + px + q}$
+-   Factores repetidos: incluir potencias ascendentes
+
+------------------------------------------------------------------------
 
 ## Ejemplo resuelto (Indefinida)
+
 Calcular:
 
 $$
 \int \frac{2x + 3}{(x - 1)(x + 2)} \, dx
 $$
 
-**Solución**:
-Descomponemos en fracciones parciales:
+**Solución**: Descomponemos en fracciones parciales:
 
 $$
 \frac{2x + 3}{(x - 1)(x + 2)} = \frac{A}{x - 1} + \frac{B}{x + 2}
@@ -123,9 +128,7 @@ $$
 2x + 3 = A(x + 2) + B(x - 1)
 $$
 
-Resolvemos:
-- $A + B = 2$
-- $2A - B = 3$ → $A = 5/3$, $B = 1/3$
+Resolvemos: - $A + B = 2$ - $2A - B = 3$ → $A = 5/3$, $B = 1/3$
 
 Integrando:
 
@@ -134,14 +137,14 @@ $$
 $$
 
 ## Ejemplo adicional (Definida)
+
 Calcular:
 
 $$
 \int_2^3 \frac{2x + 3}{(x - 1)(x + 2)} \, dx
 $$
 
-**Solución**:
-Usamos la primitiva:
+**Solución**: Usamos la primitiva:
 
 $$
 \left[ \frac{5}{3} \ln |x - 1| + \frac{1}{3} \ln |x + 2| \right]_2^3
@@ -153,26 +156,124 @@ $$
 = \frac{5}{3} [\ln 2 - \ln 1] + \frac{1}{3} [\ln 5 - \ln 4] = \frac{5}{3} \ln 2 + \frac{1}{3} (\ln 5 - \ln 4)
 $$
 
-![Área bajo la curva](graphycs02.svg){width=60%}
+![Área bajo la curva](graphycs01.svg){width="60%"}
 
--->
+--\>
 
----
 
-# Soluciones completas a los problemas propuestos
 
-### Sustitución trigonométrica
-1. Usa $x = 4 \sec \theta$, desarrolla hasta llegar a $-\frac{1}{16} \sec \theta + C$, vuelve a $x$.
-2. Usa $x = 5 \sin \theta$, resultado: $\frac{-x^3}{3 \sqrt{25 - x^2}} + C$.
-3. Usa $x = 3 \tan \theta$, resultado: $\ln|x + \sqrt{x^2 + 9}| + C$.
-4. Usa $x = 2 \sec \theta$, resultado logarítmico.
-5. Sustitución directa, resultado: $\sqrt{9 + x^2} + C$.
+# Problemas propuestos 
+## Sustitución trigonométrica 
+ 1\. Calcular: $$
+\int \frac{x^2}{\sqrt{4 - x^2}} \, dx
+$$ 
+ 2. Calcular: 
+ $$\int \frac{dx}{x^2 \sqrt{x^2 - 9}}$$ |
+3. Calcular (integral definida): 
+$$\int_0^1 \frac{dx}{\sqrt{1 - x^2}}$$ 
+<!-- Código LaTeX comentado para la gráfica --> <!-- \begin{tikzpicture} % ... \end{tikzpicture} --> |
+4. Calcular: 
+$$\int \sqrt{16 + x^2} \, dx$$
+5. Calcular (integral definida): 
+$$\int_0^2 \frac{x}{\sqrt{x^2 + 9}} \, dx$$
+<!-- Código LaTeX comentado para la gráfica --> <!-- \begin{tikzpicture} % ... \end{tikzpicture} --> |
 
-### Fracciones parciales
-1. Factoriza $(x - 3)(x + 2)$, descompón e integra.
-2. Separación en $A/(x - 2) + (Bx + C)/(x^2 + 1)$, integra cada término.
-3. Usa $A/(x + 1) + B/(x + 1)^2 + C/(x - 2)$, resuelve y suma.
-4. Factoriza, descompón y resuelve integrales logarítmicas.
-5. Descompón en $A/(x - 1) + (Bx + C)/(x^2 + 1)$, integra logarítmico y arctangente.
+## Fracciones parciales
 
-Si deseas, puedo preparar cada solución paso a paso, con gráficos y código TikZ completo para las áreas.
+1.  Calcular: $$
+    \int \frac{2x + 3}{(x - 1)(x + 2)} \, dx
+    $$
+
+2.  Calcular: $$
+    \int \frac{x^2 + 1}{x^3 + x} \, dx
+    $$
+
+3.  Calcular (integral definida): $$
+    \int_1^2 \frac{1}{x^2 - 1} \, dx$$ 
+    <!-- Código LaTeX comentado para la gráfica --> <!-- \begin{tikzpicture} % ... \end{tikzpicture} -->
+
+4.  Calcular: 
+$$\int \frac{3x + 4}{x^2 + 3x - 4} \, dx$$
+
+5.  Calcular (integral definida): 
+$$\int_0^1 \frac{1}{x^2 (x + 1)} \, dx$$
+-----------------------------------------------------------------------|
+# Soluciones a los problemas propuestos 
+## Sustitución trigonométrica 
+1. **Problema 1** 
+$$\int \frac{x^2}{\sqrt{4 - x^2}} \, dx$$
+**Esquema de solución**: - Sustituir $x = 2 \sin \theta$ - Resolver integral en términos de $\theta$ - Volver a $x$ al final |
+
+2.  **Problema 2** 
+$$\int \frac{dx}{x^2 \sqrt{x^2 - 9}}$$
+**Esquema de solución**:
+    -   Sustituir $x = 3 \sec \theta$
+    -   Resolver y simplificar
+
+------------------------------------------------------------------------
+
+3.  **Problema 3 (definida)** 
+$$\int_0^1 \frac{dx}{\sqrt{1 - x^2}} $$ 
+
+**Resultado conocido**: 
+$$\arcsin(x) \Big|_0^1 = \frac{\pi}{2}$$
+
+------------------------------------------------------------------------
+
+4.  **Problema 4** 
+$$\int \sqrt{16 + x^2} \, dx$$ 
+**Sugerencia**:
+    -   Sustituir $x = 4 \tan \theta$
+    -   Resolver integral
+
+------------------------------------------------------------------------
+
+5.  **Problema 5 (definida)** 
+$$\int_0^2 \frac{x}{\sqrt{x^2 + 9}} \, dx$$
+**Idea**:
+    -   Usar sustitución $u = x^2 + 9$
+
+------------------------------------------------------------------------
+
+## Fracciones parciales
+
+1.  **Problema 1** 
+$$\int \frac{2x + 3}{(x - 1)(x + 2)} \, dx$$
+**Esquema**:
+    -   Descomponer en fracciones parciales
+    -   Integrar cada término
+
+------------------------------------------------------------------------
+
+2.  **Problema 2** 
+$$\int \frac{x^2 + 1}{x^3 + x} \, dx$$
+**Esquema**:
+    -   Factorizar denominador: $x(x^2 + 1)$
+    -   Separar términos e integrar
+
+------------------------------------------------------------------------
+
+3.  **Problema 3 (definida)** 
+$$\int_1^2 \frac{1}{x^2 - 1} \, dx$$
+**Nota**:
+    -   Factorizar $x^2 - 1 = (x - 1)(x + 1)$
+    -   Descomponer y evaluar en límites
+
+------------------------------------------------------------------------
+
+4.  **Problema 4** 
+$$\int \frac{3x + 4}{x^2 + 3x - 4} \, dx$$
+**Esquema**:
+    -   Factorizar denominador: $(x + 4)(x - 1)$
+    -   Fracciones parciales
+
+------------------------------------------------------------------------
+
+5.  **Problema 5 (definida)** 
+$$\int_0^1 \frac{1}{x^2 (x + 1)} \, dx $$
+**Esquema**:
+    -   Descomponer en fracciones parciales
+    -   Integrar cada parte entre $0$ y $1$
+
+------------------------------------------------------------------------
+```
